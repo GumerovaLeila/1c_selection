@@ -11,4 +11,6 @@ def create_app(db_path: str = "calories.db") -> Flask:
     app.register_blueprint(main.bp)
     from calories_app.routes import dishes as dishes_routes
     app.register_blueprint(dishes_routes.bp)
+    from calories_app.routes import diary as diary_routes
+    app.register_blueprint(diary_routes.bp)
     return app

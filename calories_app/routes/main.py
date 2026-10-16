@@ -6,12 +6,6 @@ bp = Blueprint("main", __name__)
 def index():
     return render_template("index.html")
 
-
-@bp.route("/diary")
-def diary():
-    return render_template("diary.html")
-
-
 @bp.route("/analyze")
 def analyze():
     return render_template("analyze.html")
