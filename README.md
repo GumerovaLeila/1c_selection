@@ -8,11 +8,13 @@
         models.py - модели данных (Dish, Entry, Goals)
         calculation.py - вычисление КБЖУ
         db.py - работа с БД
+        analyze.py - сбор статистики по записям
     
     tests/
         test_models.py - тесты к моделям
         test_calculation.py - тесты к вычислениям КБЖУ
         test_db.py - тесты к БД
+        test_analyze.py - тесты к сбору статистики
 
 ## Принятые решения
 
