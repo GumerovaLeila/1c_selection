@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Главная — Calories{% endblock %}
+
+{% block content %}
+<h1>Calories</h1>
+<p class="lead">Считаем калории и БЖУ. Помогаем Тору держать форму.</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Блюда</h5>
+                <p class="card-text">Справочник блюд с КБЖУ на 100 г.</p>
+                <a href="{{ url_for('main.dishes') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Дневник</h5>
+                <p class="card-text">Записывайте, что съели за день.</p>
+                <a href="{{ url_for('main.diary') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Статистика</h5>
+                <p class="card-text">График калорий по дням.</p>
+                <a href="{{ url_for('main.analyze') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
