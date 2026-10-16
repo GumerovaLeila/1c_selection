@@ -6,6 +6,7 @@
 
     calories_app/
         models.py - модели данных (Dish, Entry, Goals)
+        calculation.py - вычисление КБЖУ
 
 ## Принятые решения
 
