@@ -1,5 +1,7 @@
 Гумерова Лэйла Маратовна, Задача 2
 
+https://drive.google.com/file/d/1GRnuuY3a2SoZNIFauc4oPvBS1KdGEVVy/view?usp=sharing
+
 Приложение для подсчета калорий
 
 Стек: python 3.10, SQLite, Flask
