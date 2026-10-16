@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS goals (
 
 class Database:
     def __init__(self, path: str = "calories.db"):
-        self.conn = sqlite3.connect(path)
+        self.conn = sqlite3.connect(path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA foreign_keys = ON")
         self._init_schema()
