@@ -7,11 +7,6 @@ def index():
     return render_template("index.html")
 
 
-@bp.route("/dishes")
-def dishes():
-    return render_template("dishes.html")
-
-
 @bp.route("/diary")
 def diary():
     return render_template("diary.html")
