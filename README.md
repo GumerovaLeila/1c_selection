@@ -12,7 +12,9 @@
         db.py - работа с БД
         analyze.py - сбор статистики по записям
         routes/
-            main.py - маршруты
+            main.py - главная
+            dishes.py - маршруты блюд
+            __init__.py - маркер пакета
         templates/
             base.html - общий каркас с навбаром
             index.html - главная
