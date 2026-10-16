@@ -1,6 +1,19 @@
+Гумерова Лэйла Маратовна, Задача 2
+
 Приложение для подсчета калорий
 
 Стек: python 3.10, SQLite, Flask
+
+## Запуск
+
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python app.py
+
+## Тесты
+    
+    python -m unittest discover tests -v
 
 ## Структура
 
