@@ -20,7 +20,7 @@
             index.html - главная
             dishes.html - блюда
             diary.html - дневник
-            stats.html - статистика
+            analyze.html - статистика
     
     tests/
         test_models.py - тесты к моделям

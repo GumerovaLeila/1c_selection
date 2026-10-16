@@ -1,6 +1,72 @@
 {% extends "base.html" %}
 {% block title %}Статистика — Calories{% endblock %}
+
 {% block content %}
 <h1>Статистика</h1>
-<p class="text-muted">rururu</p>
+
+<div class="mb-3">
+    <label class="form-label">Период:</label>
+    <div class="btn-group" role="group">
+        <button class="btn btn-outline-primary period-btn" data-days="7">7 дней</button>
+        <button class="btn btn-outline-primary period-btn active" data-days="30">30 дней</button>
+        <button class="btn btn-outline-primary period-btn" data-days="90">90 дней</button>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <canvas id="caloriesChart" height="100"></canvas>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+let chart = null;
+
+async function loadChart(days) {
+    const resp = await fetch(`/analyze/api/daily?days=${days}`);
+    const data = await resp.json();
+
+    const labels = data.map(d => d.date);
+    const values = data.map(d => d.calories);
+
+    if (chart) chart.destroy();
+
+    chart = new Chart(document.getElementById('caloriesChart'), {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Калории за день',
+                data: values,
+                borderColor: 'rgb(54, 162, 235)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                fill: true,
+                tension: 0.3,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: 'ккал' } },
+                x: { title: { display: true, text: 'Дата' } }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+}
+
+document.querySelectorAll('.period-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        loadChart(parseInt(btn.dataset.days));
+    });
+});
+
+loadChart(30);
+</script>
 {% endblock %}
