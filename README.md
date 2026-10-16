@@ -5,16 +5,22 @@
 ## Структура
 
     app.py - точка входа
+    requirements.txt
+
     calories_app/
-        __init__.py - фабрика Flask-приложения
+        __init__.py - Flask-приложение
         models.py - модели данных (Dish, Entry, Goals)
         calculation.py - вычисление КБЖУ
         db.py - работа с БД
         analyze.py - сбор статистики по записям
+
         routes/
+            __init__.py - маркер пакета
             main.py - главная
             dishes.py - маршруты блюд
-            __init__.py - маркер пакета
+            diary.py - маршруты дневника
+            analyze.py - маршруты статистики и API для графика
+
         templates/
             base.html - общий каркас с навбаром
             index.html - главная
@@ -23,6 +29,7 @@
             analyze.html - статистика
     
     tests/
+        __init__.py - маркер пакета
         test_models.py - тесты к моделям
         test_calculation.py - тесты к вычислениям КБЖУ
         test_db.py - тесты к БД
