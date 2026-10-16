@@ -10,6 +10,8 @@
         db.py - работа с БД
     
     tests/
+        test_models.py - тесты к моделям
+        test_calculation.py - тесты к вычислениям КБЖУ
         test_db.py - тесты к БД
 
 ## Принятые решения
